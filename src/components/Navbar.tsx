@@ -36,15 +36,18 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-3">
-          <img 
-            src="/salem.jpg" 
-            alt="Salem Home Innovation" 
+          <img
+            src="/salem.png"
+            alt="Salem Home Innovation"
+            loading="eager"
             className={`transition-all duration-500 ${scrolled ? 'h-10' : 'h-12'} w-auto rounded-sm`}
             referrerPolicy="no-referrer"
           />
-          <span className={`font-serif text-xl tracking-tight transition-colors duration-500 ${
-            scrolled ? 'text-stone-900' : 'text-white'
-          }`}>
+          <span
+            className={`font-serif text-xl tracking-tight transition-colors duration-500 ${
+              scrolled ? 'text-stone-900' : 'text-white'
+            }`}
+          >
             SALEM HOME
           </span>
         </Link>
@@ -60,15 +63,17 @@ export default function Navbar() {
               }`}
             >
               {link.name}
-              <span className={`absolute -bottom-1 left-0 w-0 h-px transition-all duration-300 group-hover:w-full ${
-                scrolled ? 'bg-stone-900' : 'bg-white'
-              }`} />
+              <span
+                className={`absolute -bottom-1 left-0 w-0 h-px transition-all duration-300 group-hover:w-full ${
+                  scrolled ? 'bg-stone-900' : 'bg-white'
+                }`}
+              />
             </Link>
           ))}
         </nav>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className="md:hidden p-2"
           onClick={() => setIsOpen(!isOpen)}
         >
