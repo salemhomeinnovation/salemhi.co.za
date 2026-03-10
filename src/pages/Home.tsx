@@ -70,7 +70,7 @@ export default function Home() {
             transition={{ delay: 0.2 }}
             className="text-5xl md:text-7xl lg:text-8xl font-serif mb-8 leading-[1.1] tracking-tight"
           >
-            EXPERT REAL ESTATE SOLUTIONS
+            REAL ESTATE SOLUTIONS
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
