@@ -48,7 +48,7 @@ export default function Navbar() {
               scrolled ? 'text-stone-900' : 'text-white'
             }`}
           >
-            SALEM HOME
+            SALEM HOME INNOVATION
           </span>
         </Link>
 
