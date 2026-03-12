@@ -87,75 +87,113 @@ export default function Contact() {
             viewport={{ once: true }}
             className="bg-stone-50 p-10 md:p-16 rounded-sm border border-stone-100 shadow-xl"
           >
-            <form 
-              className="space-y-6" 
-              action="https://formspree.io/f/mkoqojpv" 
-              method="POST"
-            >
+           <form 
+  className="space-y-6" 
+  action="https://formspree.io/f/xvzwrqqa" 
+  method="POST"
+>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                <div className="space-y-2">
-                  <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
-                    Full Name
-                  </label>
-                  <input
-                    name="Name"
-                    type="text"
-                    placeholder="John Doe"
-                    required
-                    className="w-full bg-white border border-stone-200 p-4 text-sm focus:outline-none focus:border-stone-900 transition-colors"
-                  />
-                </div>
+    <div className="space-y-2">
+      <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
+        Full Name
+      </label>
+      <input
+        name="Name"
+        type="text"
+        placeholder="John Doe"
+        required
+        className="w-full bg-white border border-stone-200 p-4 text-sm focus:outline-none focus:border-stone-900 transition-colors"
+      />
+    </div>
 
-                <div className="space-y-2">
-                  <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
-                    Email Address
-                  </label>
-                  <input
-                    name="Email"
-                    type="email"
-                    placeholder="john@example.com"
-                    required
-                    className="w-full bg-white border border-stone-200 p-4 text-sm focus:outline-none focus:border-stone-900 transition-colors"
-                  />
-                </div>
+    <div className="space-y-2">
+      <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
+        Email Address
+      </label>
+      <input
+        name="Email"
+        type="email"
+        placeholder="john@email.com"
+        required
+        className="w-full bg-white border border-stone-200 p-4 text-sm focus:outline-none focus:border-stone-900 transition-colors"
+      />
+    </div>
 
-              </div>
+  </div>
 
-              <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
-                  Subject
-                </label>
-                <input
-                  name="Subject"
-                  type="text"
-                  placeholder="Property Inquiry"
-                  required
-                  className="w-full bg-white border border-stone-200 p-4 text-sm focus:outline-none focus:border-stone-900 transition-colors"
-                />
-              </div>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-              <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
-                  Message
-                </label>
-                <textarea
-                  name="Message"
-                  placeholder="How can we help you?"
-                  required
-                  className="w-full bg-white border border-stone-200 p-4 text-sm focus:outline-none focus:border-stone-900 transition-colors min-h-[150px]"
-                />
-              </div>
+    <div className="space-y-2">
+      <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
+        Phone Number
+      </label>
+      <input
+        name="Phone"
+        type="tel"
+        placeholder="+27..."
+        required
+        className="w-full bg-white border border-stone-200 p-4 text-sm focus:outline-none focus:border-stone-900 transition-colors"
+      />
+    </div>
 
-              <button
-                type="submit"
-                className="w-full bg-stone-900 text-white py-5 text-xs uppercase tracking-widest font-semibold hover:bg-stone-800 transition-colors shadow-lg"
-              >
-                Send Message
-              </button>
+    <div className="space-y-2">
+      <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
+        Service Needed
+      </label>
+      <select
+        name="Service"
+        required
+        className="w-full bg-white border border-stone-200 p-4 text-sm focus:outline-none focus:border-stone-900 transition-colors"
+      >
+        <option value="">Select a service</option>
+        <option>Property Renovation</option>
+        <option>Construction</option>
+        <option>Home Improvement</option>
+        <option>Property Development</option>
+        <option>Property Management</option>
+      </select>
+    </div>
 
-            </form>
+  </div>
+
+  <div className="space-y-2">
+    <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
+      Estimated Budget
+    </label>
+    <select
+      name="Budget"
+      className="w-full bg-white border border-stone-200 p-4 text-sm focus:outline-none focus:border-stone-900 transition-colors"
+    >
+      <option value="">Select budget range</option>
+      <option>Under R10 000</option>
+      <option>R10 000 - R50 000</option>
+      <option>R50 000 - R200 000</option>
+      <option>Over R200 000</option>
+    </select>
+  </div>
+
+  <div className="space-y-2">
+    <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
+      Message
+    </label>
+    <textarea
+      name="Message"
+      placeholder="Tell us about your project..."
+      required
+      className="w-full bg-white border border-stone-200 p-4 text-sm focus:outline-none focus:border-stone-900 transition-colors min-h-[150px]"
+    />
+  </div>
+
+  <button
+    type="submit"
+    className="w-full bg-stone-900 text-white py-5 text-xs uppercase tracking-widest font-semibold hover:bg-stone-800 transition-colors shadow-lg"
+  >
+    Send Request
+  </button>
+
+</form>
           </motion.div>
 
         </div>
