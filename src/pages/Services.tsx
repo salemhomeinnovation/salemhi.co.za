@@ -50,11 +50,11 @@ export default function Services() {
         description="From property management and rentals to professional home renovations and real estate consulting, explore our comprehensive property solutions in Johannesburg."
         keywords="property management services, home renovation Johannesburg, real estate consulting Gauteng, property maintenance Sandton, rental management Randburg"
       />
-      <PageHero 
-        title="Expert Real Estate Solutions" 
-        subtitle="Comprehensive property services tailored to your needs in Johannesburg and surrounding areas."
-        breadcrumb="Our Services"
-      />
+     <PageHero 
+  title="Property Renovation, Rentals & Management Experts" 
+  subtitle="Helping property owners renovate, rent, and professionally manage their properties across Johannesburg."
+  breadcrumb="Our Services"
+/>
 
       {/* Services Grid */}
       <section className="py-32 px-6 bg-white">
