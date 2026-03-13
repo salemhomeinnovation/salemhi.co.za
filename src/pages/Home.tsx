@@ -222,6 +222,25 @@ View Services
 
 </section>
 
+{/* WhatsApp Floating Button */}
+
+<motion.a
+href="https://wa.me/27734341657?text=Hello%20Salem%20Home%20Innovation%2C%20I%20would%20like%20to%20ask%20about%20your%20property%20services."
+target="_blank"
+rel="noopener noreferrer"
+initial={{ scale: 0 }}
+animate={{ scale: 1 }}
+transition={{ delay: 1 }}
+className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-xl"
+
+>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" className="w-8 h-8">
+<path d="M16.001 3C8.82 3 3 8.82 3 16c0 2.82.92 5.44 2.48 7.56L4 29l5.61-1.46A12.9 12.9 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3z"/>
+</svg>
+
+</motion.a>
+
 </main>
 
 );
