@@ -22,43 +22,57 @@ emailjs.sendForm(
 formRef.current,
 "zZRsgH_9gZLBkNc4v"
 )
-.then(() => {
+.then((result) => {
+
+console.log("Email sent:", result.text);
+
 setSending(false);
 setSent(true);
+
 formRef.current.reset();
+
 })
-.catch(() => {
+.catch((error) => {
+
+console.error("EmailJS error:", error);
+
 setSending(false);
 alert("Something went wrong. Please try again.");
+
 });
 
 };
 
 const contactInfo = [
+
 {
 title: 'Office Address',
 icon: MapPin,
 content: '51, 5th Avenue, Fontainebleau, Johannesburg, Gauteng, 2032',
 link: 'https://maps.google.com/?q=51+5th+Avenue+Fontainebleau+Johannesburg'
 },
+
 {
 title: 'Phone Number',
 icon: Phone,
 content: '+27 10 016 7454',
 link: 'tel:+27100167454'
 },
+
 {
 title: 'WhatsApp',
 icon: MessageSquare,
 content: '+27 73 434 1657',
 link: 'https://wa.me/27734341657'
 },
+
 {
 title: 'Email Address',
 icon: Mail,
-content: '[info@salemhi.co.za](mailto:info@salemhi.co.za)',
+content: 'info@salemhi.co.za',
 link: 'mailto:info@salemhi.co.za'
-},
+}
+
 ];
 
 return (
@@ -95,7 +109,6 @@ whileInView={{ opacity: 1, y: 0 }}
 viewport={{ once: true }}
 transition={{ delay: index * 0.1 }}
 className="space-y-6 group"
-
 >
 
 <div className="w-12 h-12 bg-stone-50 rounded-full flex items-center justify-center group-hover:bg-stone-900 group-hover:text-white transition-colors duration-500">
@@ -103,6 +116,7 @@ className="space-y-6 group"
 </div>
 
 <div>
+
 <h4 className="text-xs uppercase tracking-widest font-bold text-stone-400">
 {info.title}
 </h4>
@@ -110,6 +124,7 @@ className="space-y-6 group"
 <p className="text-lg font-serif group-hover:text-stone-600 transition-colors leading-relaxed">
 {info.content}
 </p>
+
 </div>
 
 </motion.a>
@@ -123,17 +138,16 @@ initial={{ opacity: 0, x: 20 }}
 whileInView={{ opacity: 1, x: 0 }}
 viewport={{ once: true }}
 className="bg-stone-50 p-10 md:p-16 rounded-sm border border-stone-100 shadow-xl"
-
 >
 
 <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
 
-{/* anti-spam hidden field */}
 <input type="text" name="company" style={{ display: "none" }} />
 
 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
 <div>
+
 <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
 Full Name
 </label>
@@ -149,6 +163,7 @@ className="w-full bg-white border border-stone-200 p-4 text-sm"
 </div>
 
 <div>
+
 <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
 Email Address
 </label>
@@ -168,6 +183,7 @@ className="w-full bg-white border border-stone-200 p-4 text-sm"
 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
 <div>
+
 <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
 Phone Number
 </label>
@@ -183,6 +199,7 @@ className="w-full bg-white border border-stone-200 p-4 text-sm"
 </div>
 
 <div>
+
 <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
 Service Needed
 </label>
@@ -191,7 +208,6 @@ Service Needed
 name="service"
 required
 className="w-full bg-white border border-stone-200 p-4 text-sm"
-
 >
 
 <option value="">Select a service</option>
@@ -200,7 +216,9 @@ className="w-full bg-white border border-stone-200 p-4 text-sm"
 <option>Property Rentals</option>
 <option>Construction</option>
 <option>Property Development</option>
+
 </select>
+
 </div>
 
 </div>
@@ -214,7 +232,6 @@ Estimated Budget
 <select
 name="budget"
 className="w-full bg-white border border-stone-200 p-4 text-sm"
-
 >
 
 <option value="">Select budget range</option>
@@ -222,6 +239,7 @@ className="w-full bg-white border border-stone-200 p-4 text-sm"
 <option>R10 000 - R50 000</option>
 <option>R50 000 - R200 000</option>
 <option>Over R200 000</option>
+
 </select>
 
 </div>
@@ -246,13 +264,17 @@ type="submit"
 disabled={sending}
 className="w-full bg-stone-900 text-white py-5 text-xs uppercase tracking-widest font-semibold hover:bg-stone-800 transition-colors"
 >
+
 {sending ? "Sending..." : "Send Request"}
+
 </button>
 
 {sent && (
+
 <p className="text-green-600 text-sm pt-2">
 ✔ Message sent successfully. We will contact you shortly.
 </p>
+
 )}
 
 </form>
@@ -274,5 +296,6 @@ loading="lazy"
 </section>
 
 </main>
+
 );
 }
