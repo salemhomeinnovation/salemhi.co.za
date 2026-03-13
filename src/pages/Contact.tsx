@@ -33,12 +33,9 @@ formRef.current.reset();
 
 })
 .catch((error) => {
-
-console.error("EmailJS error:", error);
-
+console.error("EMAILJS ERROR:", error);
 setSending(false);
-alert("Something went wrong. Please try again.");
-
+alert("Email failed. Check console.");
 });
 
 };
