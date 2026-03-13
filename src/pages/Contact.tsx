@@ -3,13 +3,18 @@ import { Mail, MapPin, Phone, MessageSquare } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import SEO from '../components/SEO';
 import emailjs from '@emailjs/browser';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 export default function Contact() {
 
 const formRef = useRef();
 const [sending, setSending] = useState(false);
 const [sent, setSent] = useState(false);
+
+// Initialize EmailJS once
+useEffect(() => {
+emailjs.init("kHkRcFOdXM1bjEznL");
+}, []);
 
 const sendEmail = (e) => {
 e.preventDefault();
@@ -20,7 +25,7 @@ emailjs.sendForm(
 "service_b07u9pp",
 "template_cqd1mhx",
 formRef.current,
-"zZRsgH_9gZLBkNc4v"
+"kHkRcFOdXM1bjEznL"
 )
 .then((result) => {
 
@@ -66,7 +71,7 @@ link: 'https://wa.me/27734341657'
 {
 title: 'Email Address',
 icon: Mail,
-content: 'info@salemhi.co.za',
+content: '[info@salemhi.co.za](mailto:info@salemhi.co.za)',
 link: 'mailto:info@salemhi.co.za'
 }
 
@@ -106,6 +111,7 @@ whileInView={{ opacity: 1, y: 0 }}
 viewport={{ once: true }}
 transition={{ delay: index * 0.1 }}
 className="space-y-6 group"
+
 >
 
 <div className="w-12 h-12 bg-stone-50 rounded-full flex items-center justify-center group-hover:bg-stone-900 group-hover:text-white transition-colors duration-500">
@@ -135,6 +141,7 @@ initial={{ opacity: 0, x: 20 }}
 whileInView={{ opacity: 1, x: 0 }}
 viewport={{ once: true }}
 className="bg-stone-50 p-10 md:p-16 rounded-sm border border-stone-100 shadow-xl"
+
 >
 
 <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
@@ -205,6 +212,7 @@ Service Needed
 name="service"
 required
 className="w-full bg-white border border-stone-200 p-4 text-sm"
+
 >
 
 <option value="">Select a service</option>
@@ -229,6 +237,7 @@ Estimated Budget
 <select
 name="budget"
 className="w-full bg-white border border-stone-200 p-4 text-sm"
+
 >
 
 <option value="">Select budget range</option>
