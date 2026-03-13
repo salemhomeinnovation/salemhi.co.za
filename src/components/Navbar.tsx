@@ -43,13 +43,25 @@ export default function Navbar() {
             className={`transition-all duration-500 ${scrolled ? 'h-10' : 'h-12'} w-auto rounded-sm`}
             referrerPolicy="no-referrer"
           />
-          <span
-            className={`font-serif text-xl tracking-tight transition-colors duration-500 ${
-              scrolled ? 'text-stone-900' : 'text-white'
-            }`}
-          >
-            SALEM HOME INNOVATION
-          </span>
+
+          {/* Logo Text + Tagline */}
+          <div className="flex flex-col leading-tight">
+            <span
+              className={`font-serif text-xl tracking-tight transition-colors duration-500 ${
+                scrolled ? 'text-stone-900' : 'text-white'
+              }`}
+            >
+              SALEM HOME INNOVATION
+            </span>
+
+            <span
+              className={`text-xs tracking-wide transition-colors duration-500 ${
+                scrolled ? 'text-stone-600' : 'text-white/80'
+              }`}
+            >
+              Your Home. Our Innovation.
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
