@@ -11,7 +11,6 @@ const formRef = useRef();
 const [sending, setSending] = useState(false);
 const [sent, setSent] = useState(false);
 
-// Initialize EmailJS once
 useEffect(() => {
 emailjs.init("kHkRcFOdXM1bjEznL");
 }, []);
