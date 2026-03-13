@@ -14,25 +14,23 @@ const [sent, setSent] = useState(false);
 const sendEmail = (e) => {
 e.preventDefault();
 
-```
 setSending(true);
 
 emailjs.sendForm(
-  "service_b07u9pp",
-  "template_cqd1mhx",
-  formRef.current,
-  "YOUR_PUBLIC_KEY"
+"service_b07u9pp",
+"template_cqd1mhx",
+formRef.current,
+"zZRsgH_9gZLBkNc4v"
 )
 .then(() => {
-  setSending(false);
-  setSent(true);
-  formRef.current.reset();
+setSending(false);
+setSent(true);
+formRef.current.reset();
 })
 .catch(() => {
-  setSending(false);
-  alert("Something went wrong. Please try again.");
+setSending(false);
+alert("Something went wrong. Please try again.");
 });
-```
 
 };
 
@@ -63,211 +61,218 @@ link: 'mailto:info@salemhi.co.za'
 },
 ];
 
-return ( <main>
+return (
 
-```
-  <SEO 
-    title="Contact Salem Home Innovation | Property & Renovation Inquiries"
-    description="Contact Salem Home Innovation for property management, rental inquiries, or renovation quotes in Johannesburg."
-    keywords="property renovation Johannesburg contact, property management inquiry, Salem Home Innovation contact"
-  />
+<main>
 
-  <PageHero 
-    title="Contact Salem Home Innovation"
-    subtitle="Have a question about property renovation, rentals, or property management? Our team is ready to assist."
-    breadcrumb="Contact Us"
-  />
+<SEO 
+title="Contact Salem Home Innovation | Property & Renovation Inquiries"
+description="Contact Salem Home Innovation for property management, rental inquiries, or renovation quotes in Johannesburg."
+keywords="property renovation Johannesburg contact, property management inquiry, Salem Home Innovation contact"
+/>
 
-  <section className="py-32 px-6 bg-white">
+<PageHero 
+title="Contact Salem Home Innovation"
+subtitle="Have a question about property renovation, rentals, or property management? Our team is ready to assist."
+breadcrumb="Contact Us"
+/>
 
-    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+<section className="py-32 px-6 bg-white">
 
-      {/* CONTACT INFO */}
+<div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
 
-        {contactInfo.map((info, index) => (
+{contactInfo.map((info, index) => (
 
-          <motion.a
-            key={info.title}
-            href={info.link}
-            target={info.link.startsWith('http') ? '_blank' : undefined}
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className="space-y-6 group"
-          >
+<motion.a
+key={info.title}
+href={info.link}
+target={info.link.startsWith('http') ? '_blank' : undefined}
+rel="noopener noreferrer"
+initial={{ opacity: 0, y: 20 }}
+whileInView={{ opacity: 1, y: 0 }}
+viewport={{ once: true }}
+transition={{ delay: index * 0.1 }}
+className="space-y-6 group"
 
-            <div className="w-12 h-12 bg-stone-50 rounded-full flex items-center justify-center group-hover:bg-stone-900 group-hover:text-white transition-colors duration-500">
-              <info.icon size={20} />
-            </div>
+>
 
-            <div>
-              <h4 className="text-xs uppercase tracking-widest font-bold text-stone-400">
-                {info.title}
-              </h4>
+<div className="w-12 h-12 bg-stone-50 rounded-full flex items-center justify-center group-hover:bg-stone-900 group-hover:text-white transition-colors duration-500">
+<info.icon size={20} />
+</div>
 
-              <p className="text-lg font-serif group-hover:text-stone-600 transition-colors leading-relaxed">
-                {info.content}
-              </p>
-            </div>
+<div>
+<h4 className="text-xs uppercase tracking-widest font-bold text-stone-400">
+{info.title}
+</h4>
 
-          </motion.a>
+<p className="text-lg font-serif group-hover:text-stone-600 transition-colors leading-relaxed">
+{info.content}
+</p>
+</div>
 
-        ))}
+</motion.a>
 
-      </div>
+))}
 
-      {/* CONTACT FORM */}
+</div>
 
-      <motion.div
-        initial={{ opacity: 0, x: 20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        className="bg-stone-50 p-10 md:p-16 rounded-sm border border-stone-100 shadow-xl"
-      >
+<motion.div
+initial={{ opacity: 0, x: 20 }}
+whileInView={{ opacity: 1, x: 0 }}
+viewport={{ once: true }}
+className="bg-stone-50 p-10 md:p-16 rounded-sm border border-stone-100 shadow-xl"
 
-        <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
+>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+<form ref={formRef} onSubmit={sendEmail} className="space-y-6">
 
-            <div>
-              <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
-                Full Name
-              </label>
+{/* anti-spam hidden field */}
+<input type="text" name="company" style={{ display: "none" }} />
 
-              <input
-                type="text"
-                name="name"
-                required
-                placeholder="John Doe"
-                className="w-full bg-white border border-stone-200 p-4 text-sm"
-              />
-            </div>
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-            <div>
-              <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
-                Email Address
-              </label>
+<div>
+<label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
+Full Name
+</label>
 
-              <input
-                type="email"
-                name="email"
-                required
-                placeholder="john@email.com"
-                className="w-full bg-white border border-stone-200 p-4 text-sm"
-              />
-            </div>
+<input
+type="text"
+name="name"
+required
+placeholder="John Doe"
+className="w-full bg-white border border-stone-200 p-4 text-sm"
+/>
 
-          </div>
+</div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
+Email Address
+</label>
 
-            <div>
-              <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
-                Phone Number
-              </label>
+<input
+type="email"
+name="email"
+required
+placeholder="john@email.com"
+className="w-full bg-white border border-stone-200 p-4 text-sm"
+/>
 
-              <input
-                type="tel"
-                name="phone"
-                required
-                placeholder="+27..."
-                className="w-full bg-white border border-stone-200 p-4 text-sm"
-              />
-            </div>
+</div>
 
-            <div>
-              <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
-                Service Needed
-              </label>
+</div>
 
-              <select
-                name="service"
-                required
-                className="w-full bg-white border border-stone-200 p-4 text-sm"
-              >
-                <option value="">Select a service</option>
-                <option>Property Renovation</option>
-                <option>Property Management</option>
-                <option>Property Rentals</option>
-                <option>Construction</option>
-                <option>Property Development</option>
-              </select>
-            </div>
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-          </div>
+<div>
+<label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
+Phone Number
+</label>
 
-          <div>
+<input
+type="tel"
+name="phone"
+required
+placeholder="+27..."
+className="w-full bg-white border border-stone-200 p-4 text-sm"
+/>
 
-            <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
-              Estimated Budget
-            </label>
+</div>
 
-            <select
-              name="budget"
-              className="w-full bg-white border border-stone-200 p-4 text-sm"
-            >
-              <option value="">Select budget range</option>
-              <option>Under R10 000</option>
-              <option>R10 000 - R50 000</option>
-              <option>R50 000 - R200 000</option>
-              <option>Over R200 000</option>
-            </select>
+<div>
+<label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
+Service Needed
+</label>
 
-          </div>
+<select
+name="service"
+required
+className="w-full bg-white border border-stone-200 p-4 text-sm"
 
-          <div>
+>
 
-            <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
-              Message
-            </label>
+<option value="">Select a service</option>
+<option>Property Renovation</option>
+<option>Property Management</option>
+<option>Property Rentals</option>
+<option>Construction</option>
+<option>Property Development</option>
+</select>
+</div>
 
-            <textarea
-              name="message"
-              required
-              placeholder="Tell us about your project..."
-              className="w-full bg-white border border-stone-200 p-4 text-sm min-h-[150px]"
-            />
+</div>
 
-          </div>
+<div>
 
-          <button
-            type="submit"
-            disabled={sending}
-            className="w-full bg-stone-900 text-white py-5 text-xs uppercase tracking-widest font-semibold hover:bg-stone-800 transition-colors"
-          >
-            {sending ? "Sending..." : "Send Request"}
-          </button>
+<label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
+Estimated Budget
+</label>
 
-          {sent && (
-            <p className="text-green-600 text-sm pt-2">
-              ✔ Message sent successfully. We will contact you shortly.
-            </p>
-          )}
+<select
+name="budget"
+className="w-full bg-white border border-stone-200 p-4 text-sm"
 
-        </form>
+>
 
-      </motion.div>
+<option value="">Select budget range</option>
+<option>Under R10 000</option>
+<option>R10 000 - R50 000</option>
+<option>R50 000 - R200 000</option>
+<option>Over R200 000</option>
+</select>
 
-    </div>
+</div>
 
-  </section>
+<div>
 
-  <section className="h-[500px]">
+<label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
+Message
+</label>
 
-    <iframe
-      src="https://maps.google.com/maps?q=51%205th%20Avenue%20Fontainebleau%20Johannesburg&t=&z=15&ie=UTF8&iwloc=&output=embed"
-      className="w-full h-full border-0"
-      loading="lazy"
-    />
+<textarea
+name="message"
+required
+placeholder="Tell us about your project..."
+className="w-full bg-white border border-stone-200 p-4 text-sm min-h-[150px]"
+/>
 
-  </section>
+</div>
+
+<button
+type="submit"
+disabled={sending}
+className="w-full bg-stone-900 text-white py-5 text-xs uppercase tracking-widest font-semibold hover:bg-stone-800 transition-colors"
+>
+{sending ? "Sending..." : "Send Request"}
+</button>
+
+{sent && (
+<p className="text-green-600 text-sm pt-2">
+✔ Message sent successfully. We will contact you shortly.
+</p>
+)}
+
+</form>
+
+</motion.div>
+
+</div>
+
+</section>
+
+<section className="h-[500px]">
+
+<iframe
+src="https://maps.google.com/maps?q=51%205th%20Avenue%20Fontainebleau%20Johannesburg&t=&z=15&ie=UTF8&iwloc=&output=embed"
+className="w-full h-full border-0"
+loading="lazy"
+/>
+
+</section>
 
 </main>
-```
-
 );
 }
