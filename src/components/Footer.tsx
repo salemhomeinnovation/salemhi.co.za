@@ -19,12 +19,13 @@ export default function Footer() {
                 referrerPolicy="no-referrer"
               />
               <span className="font-serif text-xl text-white tracking-tight">
-                SALEM HOME
+                SALEM HOME INNOVATION
               </span>
             </Link>
 
             <p className="text-sm leading-relaxed opacity-70">
-              Your trusted partner for property sales, rentals, home renovations, and property management in Johannesburg and surrounding areas.
+              Salem Home Innovation specializes in property renovation, maintenance, and property management services in Johannesburg. 
+              Helping homeowners and property investors improve, maintain, and protect their properties.
             </p>
 
             <div className="flex gap-4">
@@ -56,9 +57,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Property Services */}
           <div>
-            <h4 className="font-serif text-lg text-white mb-6">Services</h4>
+            <h4 className="font-serif text-lg text-white mb-6">Property Services</h4>
             <ul className="space-y-4 text-sm">
               <li><Link to="/services" className="hover:text-white transition-colors">Property Rentals</Link></li>
               <li><Link to="/services" className="hover:text-white transition-colors">Home Renovations</Link></li>
@@ -89,9 +90,9 @@ export default function Footer() {
                   info@salemhi.co.za
                 </a>
               </li>
-
             </ul>
           </div>
+
         </div>
 
         <div className="pt-10 border-t border-stone-800 text-center text-xs opacity-50">
