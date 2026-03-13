@@ -95,9 +95,22 @@ export default function Footer() {
 
         </div>
 
+        {/* Footer Credit */}
         <div className="pt-10 border-t border-stone-800 text-center text-xs opacity-50">
-          <p>&copy; {currentYear} Salem Home Innovation. All rights reserved.</p>
+          <p>
+            &copy; {currentYear} Salem Home Innovation. All rights reserved. 
+            Website by{" "}
+            <a 
+              href="https://stopher-malik.co.za"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white underline"
+            >
+              Stopher Malik
+            </a>.
+          </p>
         </div>
+
       </div>
     </footer>
   );
