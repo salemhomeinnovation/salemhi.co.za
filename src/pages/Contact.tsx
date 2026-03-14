@@ -31,7 +31,6 @@ formRef.current
 console.log("Email sent:", result.text);
 setSending(false);
 setSent(true);
-
 formRef.current?.reset();
 
 })
@@ -125,7 +124,11 @@ className="space-y-6 group"
 </h4>
 
 <p className="text-lg font-serif group-hover:text-stone-600 transition-colors leading-relaxed">
-{info.content}
+
+{info.title === "Email Address"
+? <a href="mailto:info@salemhi.co.za">[info@salemhi.co.za](mailto:info@salemhi.co.za)</a>
+: info.content}
+
 </p>
 
 </div>
