@@ -7,7 +7,7 @@ import { useRef, useState, useEffect } from 'react';
 
 export default function Contact() {
 
-const formRef = useRef();
+const formRef = useRef(null);
 const [sending, setSending] = useState(false);
 const [sent, setSent] = useState(false);
 
@@ -29,7 +29,10 @@ formRef.current
 console.log("Email sent:", result.text);
 setSending(false);
 setSent(true);
+
+if(formRef.current){
 formRef.current.reset();
+}
 
 })
 .catch((error) => {
