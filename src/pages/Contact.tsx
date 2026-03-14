@@ -17,29 +17,27 @@ emailjs.init("kHkRcFOdXM1bjEznL");
 
 const sendEmail = (e) => {
 e.preventDefault();
-
 setSending(true);
 
 emailjs.sendForm(
 "service_b07u9pp",
 "template_cqd1mhx",
-formRef.current,
-"kHkRcFOdXM1bjEznL"
+formRef.current
 )
 .then((result) => {
 
 console.log("Email sent:", result.text);
-
 setSending(false);
 setSent(true);
-
 formRef.current.reset();
 
 })
 .catch((error) => {
+
 console.error("EMAILJS ERROR:", error);
 setSending(false);
 alert("Email failed. Check console.");
+
 });
 
 };
@@ -103,7 +101,7 @@ breadcrumb="Contact Us"
 <motion.a
 key={info.title}
 href={info.link}
-target={info.link.startsWith('http') ? '_blank' : undefined}
+target={info.link.startsWith('http') ? '_blank' : '_self'}
 rel="noopener noreferrer"
 initial={{ opacity: 0, y: 20 }}
 whileInView={{ opacity: 1, y: 0 }}
@@ -150,7 +148,6 @@ className="bg-stone-50 p-10 md:p-16 rounded-sm border border-stone-100 shadow-xl
 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
 <div>
-
 <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
 Full Name
 </label>
@@ -166,7 +163,6 @@ className="w-full bg-white border border-stone-200 p-4 text-sm"
 </div>
 
 <div>
-
 <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
 Email Address
 </label>
@@ -186,7 +182,6 @@ className="w-full bg-white border border-stone-200 p-4 text-sm"
 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
 <div>
-
 <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
 Phone Number
 </label>
@@ -202,7 +197,6 @@ className="w-full bg-white border border-stone-200 p-4 text-sm"
 </div>
 
 <div>
-
 <label className="text-[10px] uppercase tracking-widest font-bold text-stone-400">
 Service Needed
 </label>
@@ -275,11 +269,9 @@ className="w-full bg-stone-900 text-white py-5 text-xs uppercase tracking-widest
 </button>
 
 {sent && (
-
 <p className="text-green-600 text-sm pt-2">
 ✔ Message sent successfully. We will contact you shortly.
 </p>
-
 )}
 
 </form>
