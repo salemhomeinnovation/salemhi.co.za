@@ -19,7 +19,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
 e.preventDefault();
 setSending(true);
 
-if(!formRef.current) return;
+if (!formRef.current) return;
 
 emailjs.sendForm(
 "service_b07u9pp",
@@ -124,11 +124,9 @@ className="space-y-6 group"
 </h4>
 
 <p className="text-lg font-serif group-hover:text-stone-600 transition-colors leading-relaxed">
-
 {info.title === "Email Address"
-? <a href="mailto:info@salemhi.co.za">[info@salemhi.co.za](mailto:info@salemhi.co.za)</a>
+? <a href="mailto:info@salemhi.co.za">info@salemhi.co.za</a>
 : info.content}
-
 </p>
 
 </div>
