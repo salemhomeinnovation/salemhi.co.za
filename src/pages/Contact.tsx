@@ -7,7 +7,7 @@ import { useRef, useState, useEffect } from 'react';
 
 export default function Contact() {
 
-const formRef = useRef(null);
+const formRef = useRef<HTMLFormElement | null>(null);
 const [sending, setSending] = useState(false);
 const [sent, setSent] = useState(false);
 
@@ -15,9 +15,11 @@ useEffect(() => {
 emailjs.init("kHkRcFOdXM1bjEznL");
 }, []);
 
-const sendEmail = (e) => {
+const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
 e.preventDefault();
 setSending(true);
+
+if(!formRef.current) return;
 
 emailjs.sendForm(
 "service_b07u9pp",
@@ -30,9 +32,7 @@ console.log("Email sent:", result.text);
 setSending(false);
 setSent(true);
 
-if(formRef.current){
-formRef.current.reset();
-}
+formRef.current?.reset();
 
 })
 .catch((error) => {
